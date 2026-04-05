@@ -21,6 +21,7 @@ export default function About() {
               Available for freelance — infrastructure design, Kubernetes migrations, CI/CD automation,
               cloud cost optimization, and SRE consulting.
             </p>
+            <h3 className="pillars-heading">My Pillars</h3>
             <div className="about-pillars">
               {[
                 { icon: "🔒", title: "Least Privilege", desc: "Zero-trust access, scoped credentials, minimal blast radius" },

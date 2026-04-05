@@ -347,6 +347,16 @@ nav {
 
 .about-text p:last-child { margin-bottom: 0; }
 
+.pillars-heading {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 28px;
+  margin-bottom: 4px;
+}
+
 .about-pillars {
   display: grid;
   grid-template-columns: 1fr 1fr;
