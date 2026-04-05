@@ -347,6 +347,51 @@ nav {
 
 .about-text p:last-child { margin-bottom: 0; }
 
+.about-pillars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.pillar-tag {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  transition: border-color 0.2s ease;
+}
+
+.pillar-tag:hover {
+  border-color: var(--border-hover);
+}
+
+.pillar-icon {
+  font-size: 18px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.pillar-title {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+.pillar-desc {
+  display: block;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
 .about-stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -703,4 +748,5 @@ footer {
 @media (max-width: 480px) {
   .skills-grid { grid-template-columns: 1fr; }
   .about-stats { grid-template-columns: 1fr 1fr; }
+  .about-pillars { grid-template-columns: 1fr; }
 }

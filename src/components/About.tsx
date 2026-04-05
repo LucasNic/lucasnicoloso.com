@@ -21,6 +21,22 @@ export default function About() {
               Available for freelance — infrastructure design, Kubernetes migrations, CI/CD automation,
               cloud cost optimization, and SRE consulting.
             </p>
+            <div className="about-pillars">
+              {[
+                { icon: "🔒", title: "Least Privilege", desc: "Zero-trust access, scoped credentials, minimal blast radius" },
+                { icon: "🛡️", title: "Security First", desc: "Shift-left scanning, secrets management, policy-as-code" },
+                { icon: "🔁", title: "Automate Everything", desc: "If you do it twice, automate it — IaC, CI/CD, GitOps" },
+                { icon: "📉", title: "FinOps Driven", desc: "Right-sizing, spot instances, cost visibility from day one" },
+              ].map(({ icon, title, desc }) => (
+                <div className="pillar-tag" key={title}>
+                  <span className="pillar-icon">{icon}</span>
+                  <div>
+                    <span className="pillar-title">{title}</span>
+                    <span className="pillar-desc">{desc}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="about-stats">
             {[
