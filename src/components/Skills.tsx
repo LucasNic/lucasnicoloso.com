@@ -127,19 +127,85 @@ export default function Skills() {
           ))}
         </div>
 
-        <div style={{ marginTop: 40, padding: "20px 24px", background: "var(--surface)", border: "1px solid var(--border)", borderRadius: "var(--radius)" }}>
-          <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--blue)", fontFamily: "var(--font-mono)", marginBottom: 14 }}>Certifications</p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+        <div style={{ marginTop: 40 }}>
+          <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--blue)", fontFamily: "var(--font-mono)", marginBottom: 16 }}>Certifications</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 12 }}>
             {[
-              "AWS Well-Architected Foundations",
-              "DevOps with Kubernetes",
-              "Ansible para SysAdmin",
-              "Desenvolvimento Cross-Plataform com Python",
-              "Jenkins em larga escala via Docker e Kubernetes",
+              {
+                name: "AWS Well-Architected Foundations",
+                issuer: "Amazon Web Services",
+                date: "Nov 2024",
+                credential: "E-GVP9Q1",
+                url: null,
+                icon: "🟧",
+              },
+              {
+                name: "DevOps with Kubernetes",
+                issuer: "University of Helsinki",
+                date: "Nov 2024",
+                credential: "934a8093...cef69d9a5cdcf",
+                url: "https://studies.cs.helsinki.fi/stats/api/certificate/kubernetes2024/en/934a809332098f85011cef69d9a5cdcf",
+                icon: "🎓",
+              },
+              {
+                name: "Jenkins em larga escala via Docker e Kubernetes",
+                issuer: "Udemy",
+                date: "Jan 2020",
+                credential: "UC-d0300622",
+                url: "https://www.udemy.com/certificate/UC-d0300622-e527-4354-8283-645960b5a7c8/",
+                icon: "🟣",
+              },
+              {
+                name: "Ansible para SysAdmin",
+                issuer: "Udemy",
+                date: "Feb 2020",
+                credential: "UC-77722a76",
+                url: "https://www.udemy.com/certificate/UC-77722a76-1b40-4f32-b8f0-bdf16f209778/",
+                icon: "🟣",
+              },
+              {
+                name: "Desenvolvimento Cross-Plataform com Python",
+                issuer: "Udemy",
+                date: "Nov 2019",
+                credential: "UC-LDIPPDGW",
+                url: "https://www.udemy.com/certificate/UC-LDIPPDGW/",
+                icon: "🟣",
+              },
             ].map((c) => (
-              <span key={c} style={{ fontSize: 12, padding: "5px 12px", border: "1px solid var(--border)", borderRadius: 6, color: "var(--text-2)", background: "var(--bg-subtle)" }}>
-                ✓ {c}
-              </span>
+              <div key={c.credential} style={{
+                background: "var(--surface)",
+                border: "1px solid var(--border)",
+                borderRadius: "var(--radius)",
+                padding: "16px 18px",
+                display: "flex",
+                flexDirection: "column",
+                gap: 6,
+              }}>
+                <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 8 }}>
+                  <div>
+                    <div style={{ fontSize: 13, fontWeight: 700, color: "var(--text)", lineHeight: 1.4 }}>{c.name}</div>
+                    <div style={{ fontSize: 12, color: "var(--text-muted)", marginTop: 3 }}>{c.issuer} · {c.date}</div>
+                    <div style={{ fontSize: 11, color: "var(--text-muted)", fontFamily: "var(--font-mono)", marginTop: 4 }}>ID: {c.credential}</div>
+                  </div>
+                  <span style={{ fontSize: 22, flexShrink: 0 }}>{c.icon}</span>
+                </div>
+                {c.url ? (
+                  <a href={c.url} target="_blank" rel="noreferrer" style={{
+                    marginTop: 4,
+                    fontSize: 11,
+                    fontWeight: 600,
+                    color: "var(--blue)",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 4,
+                    width: "fit-content",
+                  }}>
+                    Show credential ↗
+                  </a>
+                ) : (
+                  <span style={{ marginTop: 4, fontSize: 11, color: "var(--text-muted)" }}>Certificate on file</span>
+                )}
+              </div>
             ))}
           </div>
         </div>
