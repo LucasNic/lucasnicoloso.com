@@ -67,22 +67,22 @@ export default function Hero() {
                 <div className="hero-card-dots">
                   <span /><span /><span />
                 </div>
-                <span className="hero-card-title">stack.go</span>
+                <span className="hero-card-title">sre.go</span>
               </div>
               <div>
                 {[
-                  { num: "1", content: <><span className="code-kw">package</span> <span className="code-fn">infra</span></> },
+                  { num: "1", content: <><span className="code-kw">package</span> <span className="code-fn">devops</span></> },
                   { num: "2", content: <></> },
-                  { num: "3", content: <><span className="code-kw">type</span> <span className="code-fn">Stack</span> <span className="code-kw">struct</span> {"{"}</> },
-                  { num: "4", content: <>&nbsp;&nbsp;Primary&nbsp;&nbsp;<span className="code-fn">AKS</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="code-str">{"`"}region:\"eastus\"{"`"}</span></> },
-                  { num: "5", content: <>&nbsp;&nbsp;Failover <span className="code-fn">GKE</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="code-str">{"`"}region:\"us-central1\"{"`"}</span></> },
-                  { num: "6", content: <>&nbsp;&nbsp;DNS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="code-fn">Cloudflare</span>&nbsp;&nbsp;<span className="code-str">{"`"}failover:\"auto\"{"`"}</span></> },
-                  { num: "7", content: <>&nbsp;&nbsp;DB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="code-fn">CockroachDB</span> <span className="code-str">{"`"}ha:\"multi-region\"{"`"}</span></> },
-                  { num: "8", content: <>{"}"}</> },
-                  { num: "9", content: <></> },
-                  { num: "10", content: <><span className="code-kw">func</span> (s *<span className="code-fn">Stack</span>) <span className="code-fn">Converge</span>(ctx <span className="code-fn">context.Context</span>) <span className="code-fn">error</span> {"{"}</> },
-                  { num: "11", content: <>&nbsp;&nbsp;s.DNS.<span className="code-fn">HealthCheck</span>(s.Primary, s.Failover)</> },
-                  { num: "12", content: <>&nbsp;&nbsp;<span className="code-kw">return</span> <span className="code-fn">terragrunt</span>.<span className="code-fn">Apply</span>(ctx, s)</> },
+                  { num: "3", content: <><span className="code-kw">type</span> <span className="code-fn">SRE</span> <span className="code-kw">struct</span> {"{"}</> },
+                  { num: "4", content: <>&nbsp;&nbsp;Clouds&nbsp;&nbsp;[4]<span className="code-fn">string</span>&nbsp;&nbsp;&nbsp;&nbsp;<span className="code-cm">// AWS, GCP, Azure, OCI</span></> },
+                  { num: "5", content: <>&nbsp;&nbsp;K8s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="code-fn">Orchestrator</span> <span className="code-cm">// AKS, EKS, GKE</span></> },
+                  { num: "6", content: <>&nbsp;&nbsp;IaC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="code-fn">Terraform</span>&nbsp;&nbsp;&nbsp;&nbsp;<span className="code-cm">// 50+ modules</span></> },
+                  { num: "7", content: <>&nbsp;&nbsp;CICD&nbsp;&nbsp;&nbsp;&nbsp;<span className="code-fn">Pipeline</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="code-cm">// GitOps</span></> },
+                  { num: "8", content: <>&nbsp;&nbsp;Observe <span className="code-fn">Stack</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="code-cm">// Prometheus, Grafana</span></> },
+                  { num: "9", content: <>{"}"}</> },
+                  { num: "10", content: <></> },
+                  { num: "11", content: <><span className="code-kw">func</span> (s *<span className="code-fn">SRE</span>) <span className="code-fn">Operate</span>() {"{"}</> },
+                  { num: "12", content: <>&nbsp;&nbsp;<span className="code-kw">for</span> {"{"} s.<span className="code-fn">Automate</span>(); s.<span className="code-fn">Monitor</span>(); s.<span className="code-fn">Optimize</span>() {"}"}</> },
                   { num: "13", content: <>{"}"}</> },
                 ].map(({ num, content }) => (
                   <div className="code-line" key={num}>
