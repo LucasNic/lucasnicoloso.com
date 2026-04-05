@@ -4,15 +4,15 @@ export default function Hero() {
       <div className="container">
         <div className="hero-grid">
           <div>
-            <div className="hero-eyebrow">Available for freelance work</div>
+            <div className="hero-eyebrow">Available for freelance · UTC-3</div>
             <h1 className="hero-title">
-              DevOps &amp; Backend<br />
-              <span className="accent">Cloud-Native</span><br />
-              Engineer
+              Senior DevOps<br />
+              <span className="accent">Engineer</span><br />
+              10+ Years
             </h1>
             <p className="hero-desc">
-              I design and operate multi-cloud infrastructure — Kubernetes on Azure &amp; GCP,
-              automated failover, distributed tracing, and CI/CD pipelines that ship fast and stay resilient.
+              Multi-cloud infrastructure on AWS, GCP, Azure &amp; OCI — Kubernetes, Terraform,
+              CI/CD, FinOps, and SRE. I build systems that stay up and cost less.
             </p>
             <div className="hero-actions">
               <a href="#projects" className="btn-primary">
