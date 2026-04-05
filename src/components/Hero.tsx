@@ -67,21 +67,23 @@ export default function Hero() {
                 <div className="hero-card-dots">
                   <span /><span /><span />
                 </div>
-                <span className="hero-card-title">infrastructure.go</span>
+                <span className="hero-card-title">stack.go</span>
               </div>
               <div>
                 {[
                   { num: "1", content: <><span className="code-kw">package</span> <span className="code-fn">infra</span></> },
                   { num: "2", content: <></> },
-                  { num: "3", content: <><span className="code-kw">type</span> <span className="code-fn">Platform</span> <span className="code-kw">struct</span> {"{"}</> },
-                  { num: "4", content: <>&nbsp;&nbsp;AKS&nbsp;&nbsp;&nbsp;&nbsp;<span className="code-fn">Cluster</span> <span className="code-cm">// Azure</span></> },
-                  { num: "5", content: <>&nbsp;&nbsp;GKE&nbsp;&nbsp;&nbsp;&nbsp;<span className="code-fn">Cluster</span> <span className="code-cm">// GCP</span></> },
-                  { num: "6", content: <>&nbsp;&nbsp;Failover <span className="code-fn">Worker</span> <span className="code-cm">// CF</span></> },
-                  { num: "7", content: <>{"}"}</> },
-                  { num: "8", content: <></> },
-                  { num: "9", content: <><span className="code-kw">func</span> <span className="code-fn">Deploy</span><span className="code-op">()</span> <span className="code-fn">error</span> {"{"}</> },
-                  { num: "10", content: <>&nbsp;&nbsp;<span className="code-kw">return</span> <span className="code-fn">p</span><span className="code-op">.</span><span className="code-fn">Run</span>(<span className="code-str">"always"</span>)</> },
-                  { num: "11", content: <>{"}"}</> },
+                  { num: "3", content: <><span className="code-kw">type</span> <span className="code-fn">Stack</span> <span className="code-kw">struct</span> {"{"}</> },
+                  { num: "4", content: <>&nbsp;&nbsp;Primary&nbsp;&nbsp;<span className="code-fn">AKS</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="code-str">{"`"}region:\"eastus\"{"`"}</span></> },
+                  { num: "5", content: <>&nbsp;&nbsp;Failover <span className="code-fn">GKE</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="code-str">{"`"}region:\"us-central1\"{"`"}</span></> },
+                  { num: "6", content: <>&nbsp;&nbsp;DNS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="code-fn">Cloudflare</span>&nbsp;&nbsp;<span className="code-str">{"`"}failover:\"auto\"{"`"}</span></> },
+                  { num: "7", content: <>&nbsp;&nbsp;DB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="code-fn">CockroachDB</span> <span className="code-str">{"`"}ha:\"multi-region\"{"`"}</span></> },
+                  { num: "8", content: <>{"}"}</> },
+                  { num: "9", content: <></> },
+                  { num: "10", content: <><span className="code-kw">func</span> (s *<span className="code-fn">Stack</span>) <span className="code-fn">Converge</span>(ctx <span className="code-fn">context.Context</span>) <span className="code-fn">error</span> {"{"}</> },
+                  { num: "11", content: <>&nbsp;&nbsp;s.DNS.<span className="code-fn">HealthCheck</span>(s.Primary, s.Failover)</> },
+                  { num: "12", content: <>&nbsp;&nbsp;<span className="code-kw">return</span> <span className="code-fn">terragrunt</span>.<span className="code-fn">Apply</span>(ctx, s)</> },
+                  { num: "13", content: <>{"}"}</> },
                 ].map(({ num, content }) => (
                   <div className="code-line" key={num}>
                     <span className="code-num">{num}</span>
