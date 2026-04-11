@@ -63,9 +63,6 @@ export default function Projects() {
       <div className="container">
         <p className="section-label">Work</p>
         <h2 className="section-title">Projects</h2>
-        <p className="section-sub">
-          Real systems running in production — not toy demos.
-        </p>
         <div className="projects-grid">
           {projects.map((p) => (
             <div className={`project-card${p.featured ? " featured" : ""}`} key={p.title}>
