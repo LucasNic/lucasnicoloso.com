@@ -14,7 +14,7 @@ This site showcases Lucas Nicoloso's professional experience, skills, and projec
 - Hero: Introduction with title "Senior DevOps Engineer 10+ Years"
 - About: Background, experience, and core principles (Least Privilege, Security First, Automate Everything, FinOps Driven)
 - Skills: Technical skills across AWS, GCP, Azure, Kubernetes, Terraform, CI/CD, Observability
-- Projects: Interactive simulations and infrastructure code including Multi‑Cloud Simulation, Deployment Simulation, this site, Multi‑Cloud IaC
+- Projects: Interactive simulations and infrastructure code including Multi‑Cloud Simulation, Deployment Simulation, this site, Multi‑Cloud IaC, CI/CD Azure Microservices
 - Contact: Form and links for professional inquiries
 - Footer: Social links (GitHub, LinkedIn, Instagram)
 

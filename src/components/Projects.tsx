@@ -55,6 +55,16 @@ const projects: Project[] = [
       { label: "GitHub", href: "https://github.com/LucasNic/multi-cloud-iac" },
     ],
   },
+  {
+    badge: "📚 Documentation",
+    title: "CI/CD Azure Microservices",
+    desc: "Technical documentation of a microservices infrastructure on Azure, created for a test. Includes CI/CD pipelines, container orchestration, and infrastructure as code.",
+    stack: ["Azure", "Kubernetes", "Docker", "GitHub Actions", "Terraform", "Helm"],
+    stackColors: ["blue", "purple", "cyan", "blue", "purple", "amber"],
+    links: [
+      { label: "GitHub", href: "https://github.com/LucasNic/ci-cd-azure" },
+    ],
+  },
 ];
 
 export default function Projects() {
