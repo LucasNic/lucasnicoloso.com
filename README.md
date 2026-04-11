@@ -1,73 +1,55 @@
-# React + TypeScript + Vite
+# lucasnicoloso.com – Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Senior DevOps Engineer portfolio website built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+[![Live Demo](https://img.shields.io/badge/demo-lucasnicoloso.com-blue?style=for-the-badge)](https://lucasnicoloso.com)
+[![Build Status](https://github.com/LucasNic/lucasnicoloso.com/actions/workflows/deploy.yml/badge.svg)](https://github.com/LucasNic/lucasnicoloso.com/actions/workflows/deploy.yml)
+[![License](https://img.shields.io/github/license/LucasNic/lucasnicoloso.com)](LICENSE)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Overview
 
-## React Compiler
+This site showcases Lucas Nicoloso's professional experience, skills, and projects as a Senior DevOps Engineer with 10+ years of multi‑cloud expertise.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Sections:**
+- Hero: Introduction with title "Senior DevOps Engineer 10+ Years"
+- About: Background, experience, and core principles (Least Privilege, Security First, Automate Everything, FinOps Driven)
+- Skills: Technical skills across AWS, GCP, Azure, Kubernetes, Terraform, CI/CD, Observability
+- Projects: Interactive simulations and infrastructure code including Multi‑Cloud Simulation, Deployment Simulation, this site, Multi‑Cloud IaC
+- Contact: Form and links for professional inquiries
+- Footer: Social links (GitHub, LinkedIn, Instagram)
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Frontend:** React 19, TypeScript
+- **Build Tool:** Vite
+- **Styling:** CSS Modules
+- **Linting:** ESLint with TypeScript (type‑aware rules)
+- **Deployment:** Cloudflare Pages (automated via GitHub Actions)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Development
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev          # start dev server on http://localhost:5173
+npm run build        # production build
+npm run lint         # run ESLint
+npm run preview      # preview production build locally
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Linting
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+ESLint is configured with type‑aware rules for TypeScript and React‑specific linting via `eslint-plugin-react-hooks` and `eslint-plugin-react-refresh`. The configuration file is `eslint.config.js`. For production applications, you can extend the configuration with stricter rules as described in the [official ESLint documentation](https://eslint.org/docs/latest/use/configure/).
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Deployment
+
+The site is automatically deployed to Cloudflare Pages on every push to the `main` branch. The workflow is defined in `.github/workflows/deploy.yml`.
+
+To deploy manually:
+
+1. Ensure you have the Cloudflare Wrangler CLI installed and authenticated.
+2. Run `npm run build` to produce the `dist` folder.
+3. Deploy with `wrangler pages deploy dist --project-name=lucasnicoloso-com --branch=main`.
+
+## License
+
+MIT © Lucas Nicoloso. See [LICENSE](LICENSE) for details.
