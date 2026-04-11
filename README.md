@@ -22,7 +22,7 @@ This site showcases Lucas Nicoloso's professional experience, skills, and projec
 
 - **Frontend:** React 19, TypeScript
 - **Build Tool:** Vite
-- **Styling:** CSS Modules
+- **Styling:** CSS traditional (style.css)
 - **Linting:** ESLint with TypeScript (type‑aware rules)
 - **Deployment:** Cloudflare Pages (automated via GitHub Actions)
 
