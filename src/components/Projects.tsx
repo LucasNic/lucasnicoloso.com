@@ -16,11 +16,6 @@ const projects: Project[] = [
     badge: "⚡ Live Demo",
     title: "Multi‑Cloud Simulation",
     desc: "Interactive simulation of multi‑cloud architectures with four selectable strategies in real‑time. Entire physics runs in the browser — no cloud APIs called. Demonstrates latency, cost, and availability trade‑offs between Single Cloud, Cold DR, Warm Burst, and Hot Active‑Active.",
-    metrics: [
-      { value: "4", label: "Strategies" },
-      { value: "$0", label: "Cloud Cost" },
-      { value: "100%", label: "Browser" },
-    ],
     stack: ["React", "Tailwind", "TypeScript", "Vite", "Cloudflare Pages"],
     stackColors: ["cyan", "green", "blue", "purple", "amber"],
     links: [
@@ -101,14 +96,16 @@ export default function Projects() {
                       </div>
                     </div>
                   </div>
-                  <div className="project-metrics">
-                    {p.metrics?.map((m) => (
-                      <div className="metric" key={m.label}>
-                        <div className="metric-value">{m.value}</div>
-                        <div className="metric-label">{m.label}</div>
-                      </div>
-                    ))}
-                  </div>
+                  {p.metrics && p.metrics.length > 0 && (
+                    <div className="project-metrics">
+                      {p.metrics.map((m) => (
+                        <div className="metric" key={m.label}>
+                          <div className="metric-value">{m.value}</div>
+                          <div className="metric-label">{m.label}</div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               ) : (
                 <>
